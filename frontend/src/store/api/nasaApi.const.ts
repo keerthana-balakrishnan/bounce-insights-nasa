@@ -1,0 +1,5 @@
+const NASA_API_BASE_URL = process.env.REACT_APP_BASE_URL;
+const PICTURE_OF_THE_DAY_ENDPOINT = "/pictureoftheday";
+const MARS_ROVER_ENDPOINT = "/marsroverimages";
+
+export { NASA_API_BASE_URL, PICTURE_OF_THE_DAY_ENDPOINT, MARS_ROVER_ENDPOINT };

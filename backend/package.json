@@ -1,0 +1,27 @@
+{
+  "name": "nasa-explorer-api",
+  "version": "0.1.0",
+  "author": "Keerthana Balakrishnan",
+  "contributors": [
+    {
+      "name": "Keerthana Balakrishnan",
+      "email": "keerthanabalakrishnan93@gmail.com"
+    }
+  ],
+  "type": "module",
+  "private": true,
+  "main":"api/index.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node api/index.js",
+    "test": "node --experimental-vm-modules --no-warnings ./node_modules/.bin/jest"
+  }
+}
