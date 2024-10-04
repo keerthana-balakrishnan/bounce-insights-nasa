@@ -8,6 +8,7 @@ The repo is deployed and the app is accessable [here](https://keerthana-balakris
 
 1. insall node > 20, verify with `node -v`
 1. clone this repository
+   `git clone https://github.com/keerthana-balakrishnan/bounce-insights-nasa.git`
 1. visit https://api.nasa.gov/ and signup for a api key
 1. once received. validate the key works with `https://api.nasa.gov/planetary/apod?api_key=KEY_GOES_HERE`
 1. visit [backend/.env](./backend/.env) and add to `NASA_API_KEY`
@@ -20,6 +21,11 @@ The repo is deployed and the app is accessable [here](https://keerthana-balakris
 1. visit `http://localhost:3000` if its not opened already 🎉
    - make sure frontend is running in port 3000 or adjust the ALLOW_ORIGIN in .env file at backend/.env
 1. for unit tests run `npm test` in respective folders
+
+**Note:**
+
+- some of the 4K picture of the day images are quite large and takes time to load, this can be address with loading the low res image for the initial load
+- App is designed to work well on Desktop, Tablets and Mobile
 
 ## 👩‍💻 Implementation
 
@@ -40,7 +46,11 @@ http://localhost:3001/api/pictureoftheday?date=2024-09-22
 
 `date` date for which the picture of the day is required (format - YYYY-MM-DD)
 
-nasa api endpoint `https://api.nasa.gov/planetary/apod?date=2024-09-22&api_key=PLACEHOLDER`
+**nasa api endpoint**
+
+```
+https://api.nasa.gov/planetary/apod?date=2024-09-22&api_key=PLACEHOLDER
+```
 
 #### → marsroverimages
 
@@ -51,13 +61,18 @@ http://localhost:3001/api/marsroverimages?rover_name=curiosity&date=2024-02-19
 ```
 
 `date` date for which the images are required (format - YYYY-MM-DD)
+
 `rover_name` name of the rover (curiosity ✅, opportunity ❌, spirit ❌)
 
-✅ data available between `2011-11-26` `2024-02-19` but couldn't validate all dates
+- ✅ data available between `2011-11-26` `2024-02-19` but couldn't validate all dates
 
-❌ data does not exist (image url redirected to nasa webpage)
+- ❌ data does not exist (image url redirected to nasa webpage)
 
-nasa api endpoint `https://api.nasa.gov//mars-photos/api/v1/rovers/{rover_name}/photos?api_key=PLACEHOLDER&earth_date=2024-02-19`
+**nasa api endpoint**
+
+```
+https://api.nasa.gov//mars-photos/api/v1/rovers/{rover_name}/photos?api_key=PLACEHOLDER&earth_date=2024-02-19
+```
 
 - `API_KEY` are securly passed to service thought env from deployment
 - sevices can be secured with authentication, for now api's are secured through cors (only ux url is allow listed - controlled through env variable through deployment)
